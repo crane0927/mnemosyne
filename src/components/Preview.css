@@ -1,0 +1,222 @@
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+.preview-header {
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.preview-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.preview-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: white;
+}
+
+.preview-markdown {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* 通用Markdown样式 */
+.preview-markdown h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  font-weight: 700;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.3em;
+}
+
+.preview-markdown h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0 0.5em 0;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.3em;
+}
+
+.preview-markdown h3 {
+  font-size: 1.25em;
+  margin: 1em 0 0.5em 0;
+  font-weight: 600;
+}
+
+.preview-markdown p {
+  margin: 1em 0;
+}
+
+.preview-markdown ul,
+.preview-markdown ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.preview-markdown li {
+  margin: 0.5em 0;
+}
+
+.preview-markdown strong {
+  font-weight: 600;
+}
+
+.preview-markdown em {
+  font-style: italic;
+}
+
+.preview-markdown hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 2em 0;
+}
+
+.preview-markdown code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9em;
+}
+
+.preview-markdown pre {
+  background: #f4f4f4;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.preview-markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+.preview-markdown blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #666;
+}
+
+.preview-markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.preview-markdown table th,
+.preview-markdown table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.preview-markdown table th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* 现代风格 */
+.preview-modern h1 {
+  color: #4A90E2;
+  border-bottom-color: #4A90E2;
+}
+
+.preview-modern h2 {
+  color: #2C3E50;
+  border-bottom-color: #E0E0E0;
+}
+
+.preview-modern strong {
+  color: #4A90E2;
+}
+
+/* 经典风格 */
+.preview-classic h1 {
+  color: #8B4513;
+  border-bottom-color: #8B4513;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.preview-classic h2 {
+  color: #1A1A1A;
+  border-bottom-color: #8B4513;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.preview-classic {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* 简约风格 */
+.preview-minimal h1 {
+  color: #000000;
+  border-bottom: 1px solid #000;
+  border-bottom-width: 2px;
+}
+
+.preview-minimal h2 {
+  color: #333333;
+  border-bottom: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+}
+
+.preview-minimal {
+  line-height: 1.6;
+}
+
+.preview-minimal h1,
+.preview-minimal h2,
+.preview-minimal h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* 专业风格 */
+.preview-professional h1 {
+  color: #2C5282;
+  border-bottom-color: #2C5282;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.preview-professional h2 {
+  color: #2D3748;
+  border-bottom-color: #CBD5E0;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.preview-professional {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.preview-professional strong {
+  color: #2C5282;
+}
+
+@media (max-width: 768px) {
+  .preview-container {
+    width: 100%;
+    height: 50%;
+  }
+
+  .preview-content {
+    padding: 20px;
+  }
+}
+
