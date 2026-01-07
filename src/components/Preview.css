@@ -1,6 +1,8 @@
 .preview-container {
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
+  min-width: 0;
   width: 50%;
   height: 100%;
   background: white;
@@ -212,11 +214,9 @@
 @media (max-width: 768px) {
   .preview-container {
     width: 100%;
-    height: 50%;
   }
 
   .preview-content {
     padding: 20px;
   }
 }
-

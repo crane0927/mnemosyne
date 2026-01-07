@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Split from 'react-split'
 import './App.css'
 import Editor from './components/Editor'
 import FormEditor from './components/FormEditor/FormEditor'
@@ -13,12 +14,22 @@ function App() {
   const [style, setStyle] = useState<ResumeStyle>('modern')
   const [inputMode, setInputMode] = useState<'markdown' | 'form'>('markdown')
   const [resumeData, setResumeData] = useState<ResumeData>(defaultResumeData)
+  const [isNarrow, setIsNarrow] = useState(false)
 
   const handleDataChange = (newData: ResumeData) => {
     setResumeData(newData)
     const newMarkdown = generateResumeMarkdown(newData)
     setMarkdown(newMarkdown)
   }
+
+  useEffect(() => {
+    const updateLayout = () => {
+      setIsNarrow(window.innerWidth <= 768)
+    }
+    updateLayout()
+    window.addEventListener('resize', updateLayout)
+    return () => window.removeEventListener('resize', updateLayout)
+  }, [])
 
   return (
     <div className="app">
@@ -29,14 +40,21 @@ function App() {
         inputMode={inputMode}
         onInputModeChange={setInputMode}
       />
-      <div className="app-content">
+      <Split
+        className="app-content"
+        sizes={[50, 50]}
+        minSize={isNarrow ? 200 : 280}
+        gutterSize={8}
+        snapOffset={40}
+        direction={isNarrow ? 'vertical' : 'horizontal'}
+      >
         {inputMode === 'markdown' ? (
           <Editor value={markdown} onChange={setMarkdown} />
         ) : (
           <FormEditor data={resumeData} onChange={handleDataChange} />
         )}
         <Preview markdown={markdown} style={style} />
-      </div>
+      </Split>
     </div>
   )
 }
