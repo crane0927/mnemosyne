@@ -41,6 +41,7 @@ function App() {
         onInputModeChange={setInputMode}
       />
       <Split
+        key={`${inputMode}-${isNarrow ? 'vertical' : 'horizontal'}`}
         className="app-content"
         sizes={[50, 50]}
         minSize={isNarrow ? 200 : 280}
